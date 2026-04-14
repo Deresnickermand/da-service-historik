@@ -1,0 +1,29 @@
+@page
+@model DA.ServiceHistorik.Api.Pages.RemindersModel
+@{
+    ViewData["Title"] = "Sendte reminders";
+    Layout = "_Layout";
+}
+<h2>Sendte reminders — <strong>@Model.Plate</strong></h2>
+<a href="/Search?plate=@Model.Plate" class="btn btn-outline-secondary btn-sm mb-3">← Tilbage til servicehistorik</a>
+
+@if (!Model.Reminders.Any())
+{
+    <p class="text-muted">Ingen reminders sendt for denne nummerplade endnu.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead><tr><th>Type</th><th>Service-dato</th><th>Sendt</th></tr></thead>
+        <tbody>
+        @foreach (var r in Model.Reminders)
+        {
+            <tr>
+                <td>@(r.ReminderType == DA.ServiceHistorik.Api.Models.ReminderType.ThirtyDay ? "30 dage" : "14 dage")</td>
+                <td>@r.ServiceDate.ToString("dd-MM-yyyy")</td>
+                <td>@r.SentAt.ToString("dd-MM-yyyy HH:mm")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
