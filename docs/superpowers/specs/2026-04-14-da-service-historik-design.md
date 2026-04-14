@@ -79,10 +79,9 @@ Ingen `ServiceRules`-tabel — regler styres via `servicerules.json`.
 ```
 1. Hent alle service-records fra Deres Auto API
 2. For hver record:
-   a. Slå bilmærke op i servicerules.json → hent intervalMonths + intervalKm
-   b. Beregn næste service-dato:
+   a. Slå bilmærke op i servicerules.json → hent intervalMonths
+   b. Beregn næste service-dato (v1: kun datobaseret):
         næsteDato = sidsteDato + intervalMonths
-        (km-baseret: sidsteKm + intervalKm → konverteres til estimeret dato hvis muligt)
    c. Beregn dage til næste service
    d. Er dage == 30 ELLER dage == 14?
         → Tjek SentReminders: er (nummerplade + reminderType + serviceDato) allerede sendt?
