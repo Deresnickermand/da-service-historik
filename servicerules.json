@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "make": "Mercedes-Benz", "intervalMonths": 12, "intervalKm": 8000 },
+    { "make": "DEFAULT",       "intervalMonths": 6,  "intervalKm": 8000 }
+  ]
+}
