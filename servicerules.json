@@ -1,7 +1,31 @@
 {
   "rules": [
-    { "make": "Mercedes-Benz", "intervalMonths": 12, "intervalKm": 8000 },
-    { "make": "Navor",         "intervalMonths": 6,  "intervalKm": 3500, "model": "E5" },
-    { "make": "DEFAULT",       "intervalMonths": 6,  "intervalKm": 8000 }
+    { "make": "Mercedes-Benz", "model": "Vito 639",      "intervalMonths": 6,  "intervalKm": 5000 },
+    { "make": "Mercedes-Benz", "model": "Vito 447",      "intervalMonths": 6,  "intervalKm": 5000 },
+    { "make": "Mercedes-Benz", "model": "Sprinter",      "intervalMonths": 6,  "intervalKm": 5000 },
+    { "make": "Mercedes-Benz",                           "intervalMonths": 12, "intervalKm": 8000 },
+
+    { "make": "Mitsubishi",    "model": "L200",          "intervalMonths": 6,  "intervalKm": 5000  },
+    { "make": "Mitsubishi",    "model": "Outlander PHEV","intervalMonths": 6,  "intervalKm": 10000 },
+    { "make": "Mitsubishi",    "model": "Eclipse Cross", "intervalMonths": 6,  "intervalKm": 10000 },
+    { "make": "Mitsubishi",                              "intervalMonths": 6,  "intervalKm": 10000 },
+
+    { "make": "Toyota",        "model": "Proace EV",     "intervalMonths": 12, "intervalKm": 10000 },
+    { "make": "Toyota",        "model": "RAV4 PHEV",     "intervalMonths": 6,  "intervalKm": 7500  },
+    { "make": "Toyota",        "model": "Proace City",   "intervalMonths": 6,  "intervalKm": 7500  },
+    { "make": "Toyota",        "model": "Hilux",         "intervalMonths": 6,  "intervalKm": 5000  },
+    { "make": "Toyota",        "model": "BZ4X",          "intervalMonths": 6,  "intervalKm": 10000 },
+    { "make": "Toyota",                                  "intervalMonths": 6,  "intervalKm": 7500  },
+
+    { "make": "Hyundai",       "model": "Ioniq 5",       "intervalMonths": 6,  "intervalKm": 10000 },
+    { "make": "Hyundai",       "model": "Tucson PHEV",   "intervalMonths": 6,  "intervalKm": 7500  },
+    { "make": "Hyundai",       "model": "Santa Fe PHEV", "intervalMonths": 6,  "intervalKm": 7500  },
+    { "make": "Hyundai",                                 "intervalMonths": 6,  "intervalKm": 7500  },
+
+    { "make": "MG",                                      "intervalMonths": 6,  "intervalKm": 10000 },
+
+    { "make": "Navor",         "model": "E5",            "intervalMonths": 6,  "intervalKm": 3500  },
+
+    { "make": "DEFAULT",                                 "intervalMonths": 6,  "intervalKm": 8000  }
   ]
 }
