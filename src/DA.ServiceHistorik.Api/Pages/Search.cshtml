@@ -1,0 +1,50 @@
+@page
+@model DA.ServiceHistorik.Api.Pages.SearchModel
+@{
+    ViewData["Title"] = "Søg nummerplade";
+    Layout = "_Layout";
+}
+<h2>Søg på nummerplade</h2>
+<form method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="plate" value="@Model.Plate" class="form-control"
+               placeholder="Fx GJ12345" style="max-width:200px;text-transform:uppercase"/>
+        <button class="btn btn-primary" type="submit">Søg</button>
+    </div>
+</form>
+
+@if (Model.Plate != null && !Model.Records.Any())
+{
+    <p class="text-muted">Ingen service-records fundet for <strong>@Model.Plate</strong>.</p>
+}
+
+@if (Model.Records.Any())
+{
+    <h5>Service-historik for <strong>@Model.Plate</strong></h5>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Dato</th><th>Type</th><th>Mærke / Model</th><th>Km</th>
+            <th>Næste service</th><th>Dage til service</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var row in Model.Records)
+        {
+            <tr>
+                <td>@row.ServiceDate.ToString("dd-MM-yyyy")</td>
+                <td>@row.ServiceType</td>
+                <td>@row.Make @row.Model</td>
+                <td>@row.KmAtService.ToString("N0")</td>
+                <td>@row.NextServiceDate.ToString("dd-MM-yyyy")</td>
+                <td class="@(row.DaysUntilService <= 14 ? "text-danger fw-bold" : row.DaysUntilService <= 30 ? "text-warning" : "")">
+                    @row.DaysUntilService dage
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <a href="/Reminders?plate=@Model.Plate" class="btn btn-outline-secondary btn-sm">
+        Se sendte reminders
+    </a>
+}

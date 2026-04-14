@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] — Deres Auto Service</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <span class="navbar-brand">Deres Auto — Service Historik</span>
+        <div>
+            <a href="/Search" class="btn btn-outline-light btn-sm me-2">Søg nummerplade</a>
+            <a href="/hangfire" class="btn btn-outline-warning btn-sm">Job Dashboard</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    @RenderBody()
+</div>
+</body>
+</html>
